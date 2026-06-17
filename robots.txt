@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://taipei-nightclub-yuyou.com/sitemap.xml
