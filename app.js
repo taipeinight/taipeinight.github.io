@@ -126,10 +126,28 @@ function setupFloatingContact(){
   if(document.querySelector('.floating-contact')) return;
   const wrap = document.createElement('div');
   wrap.className = 'floating-contact';
-  wrap.innerHTML = `<div class="float-panel" aria-label="快速聯絡方式"><button class="float-close" type="button" aria-label="關閉聯絡方式">×</button><p class="float-title">聯絡 台北夜總會俞右</p><p class="float-note">傳人數、時間、預算，快速協助安排。</p><a class="btn-line" href="https://line.me/ti/p/~jokey98" target="_blank" rel="noopener">💬 Line: jokey98</a><a class="btn-tg" href="https://t.me/jokey998" target="_blank" rel="noopener">✈️ Telegram: jokey998</a><a class="btn-channel" href="https://t.me/+GlJY15nX6lY3NmJl" target="_blank" rel="noopener">👀 TG 班表頻道</a><a class="btn-phone" href="tel:0909079473">📞 0909079473</a></div><button class="float-toggle" type="button" aria-label="開啟聯絡方式">☎</button>`;
+  wrap.innerHTML = `<div class="float-panel" id="floating-contact-panel" aria-label="快速聯絡方式"><p class="float-title">聯絡 台北夜總會俞右</p><p class="float-note">傳人數、時間、預算，快速協助安排。</p><a class="btn-line" href="https://line.me/ti/p/~jokey98" target="_blank" rel="noopener">💬 Line: jokey98</a><a class="btn-tg" href="https://t.me/jokey998" target="_blank" rel="noopener">✈️ Telegram: jokey998</a><a class="btn-channel" href="https://t.me/+GlJY15nX6lY3NmJl" target="_blank" rel="noopener">👀 TG 班表頻道</a><a class="btn-phone" href="tel:0909079473">📞 0909079473</a></div><button class="float-toggle" type="button" aria-label="開啟聯絡方式" aria-controls="floating-contact-panel" aria-expanded="false">☎</button>`;
   document.body.appendChild(wrap);
-  wrap.querySelector('.float-toggle').addEventListener('click',()=>wrap.classList.toggle('open'));
-  wrap.querySelector('.float-close').addEventListener('click',()=>wrap.classList.remove('open'));
+  const toggle = wrap.querySelector('.float-toggle');
+  const setExpanded = open => {
+    toggle.setAttribute('aria-expanded', String(open));
+  };
+  const setOpen = open => {
+    wrap.classList.toggle('open', open);
+    setExpanded(open);
+  };
+  toggle.addEventListener('click',()=>setOpen(!wrap.classList.contains('open')));
+  wrap.addEventListener('mouseenter',()=>setExpanded(true));
+  wrap.addEventListener('mouseleave',()=>{
+    setOpen(false);
+    if(wrap.contains(document.activeElement)) document.activeElement.blur();
+  });
+  wrap.addEventListener('focusin',()=>setExpanded(true));
+  wrap.addEventListener('focusout',()=>{
+    setTimeout(()=>{
+      if(!wrap.contains(document.activeElement) && !wrap.classList.contains('open')) setExpanded(false);
+    }, 0);
+  });
 }
 function setupMediaFallback(){
   document.querySelectorAll('img').forEach(img=>{
