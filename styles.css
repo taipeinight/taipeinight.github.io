@@ -34,3 +34,20 @@ video.media-video,video.showcase-video,.hero-media video{object-fit:contain;back
 .location-list span{display:block;color:#dfd6cb}
 @media (max-width:1080px){.uniform-page .uniform-hero{grid-template-columns:1fr}.uniform-hero-media{max-width:780px}.seo-highlight-grid,.location-list{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.uniform-page .uniform-hero h1{font-size:36px}.uniform-media-pair,.seo-highlight-grid,.location-list{grid-template-columns:1fr}.uniform-media-pair .media-video,.uniform-media-pair .media-img{min-height:0}.uniform-showcase .showcase-side .showcase-img:first-child{grid-column:auto}.uniform-page .seo-tags span{font-size:13px}}
+
+/* Gown page SEO and media layout */
+.gown-page .gown-hero{grid-template-columns:minmax(0,1fr) minmax(430px,540px);gap:46px}
+.gown-page .gown-hero h1{font-size:clamp(40px,5.1vw,66px)}
+.gown-page .seo-tags{margin-top:20px}
+.gown-hero-media{gap:14px}
+.gown-feature-img{aspect-ratio:16/9!important;object-fit:cover}
+.gown-media-pair{display:grid;grid-template-columns:.82fr 1.18fr;gap:14px;align-items:stretch}
+.gown-media-pair .media-video.video-portrait{width:100%;height:100%;min-height:315px;aspect-ratio:9/16;object-fit:contain}
+.gown-media-pair .media-img{height:100%;min-height:315px;aspect-ratio:auto}
+.gown-info-panel .glass-card{min-height:100%}
+.gown-showcase .showcase-main{text-align:center}
+.gown-showcase .showcase-video.video-portrait{height:min(68vh,620px);width:auto;max-width:100%;min-height:0;margin-inline:auto}
+.gown-showcase .showcase-side .showcase-img{min-height:0;aspect-ratio:16/10}
+.gown-showcase .showcase-side .showcase-img:first-child{grid-column:1/-1;aspect-ratio:16/9}
+@media (max-width:1080px){.gown-page .gown-hero{grid-template-columns:1fr}.gown-hero-media{max-width:780px}}
+@media (max-width:620px){.gown-page .gown-hero h1{font-size:36px}.gown-media-pair{grid-template-columns:1fr}.gown-media-pair .media-video.video-portrait{width:100%;max-width:320px;height:auto;min-height:0;margin-inline:auto}.gown-media-pair .media-img{min-height:0;aspect-ratio:4/3}.gown-showcase .showcase-side .showcase-img:first-child{grid-column:auto}.gown-page .seo-tags span{font-size:13px}}
