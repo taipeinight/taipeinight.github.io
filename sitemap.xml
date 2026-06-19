@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://taipeinight.github.io/play-guide.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -53,6 +53,18 @@
     <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://taipeinight.github.io/guide-ktv.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://taipeinight.github.io/guide-linsen-cost.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://taipeinight.github.io/guide-first-time.html</loc>
