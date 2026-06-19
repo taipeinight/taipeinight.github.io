@@ -125,3 +125,10 @@ video.media-video,video.showcase-video,.hero-media video{object-fit:contain;back
 
 /* Floating contact opens on hover for desktop, and focus/click for touch and keyboard. */
 .floating-contact:hover .float-panel,.floating-contact:focus-within .float-panel{display:block}
+
+/* Store page unique SEO answer sections */
+.store-insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.store-insight-grid .glass-card{min-height:100%}
+.store-insight-grid h2{font-size:clamp(24px,2.7vw,34px)}
+.store-insight-grid p{color:#dfd6cb}
+@media (max-width:980px){.store-insight-grid{grid-template-columns:1fr}}
